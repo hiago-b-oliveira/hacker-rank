@@ -19,7 +19,7 @@ public class CircularArrayRotation {
         for (int a0 = 0; a0 < q; a0++) {
             int m = in.nextInt();
 
-            int shiftedIndex = m - k;
+            int shiftedIndex = (m - k) % n;
             shiftedIndex = (shiftedIndex < 0) ? n + shiftedIndex : shiftedIndex;
             shiftedIndex = (shiftedIndex < 0) ? 0 : shiftedIndex;
 

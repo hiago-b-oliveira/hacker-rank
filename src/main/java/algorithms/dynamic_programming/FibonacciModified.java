@@ -1,4 +1,4 @@
-package algorithms.DynamicProgramming;
+package algorithms.dynamic_programming;
 
 import java.math.BigInteger;
 import java.util.Scanner;

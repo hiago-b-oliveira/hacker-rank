@@ -1,4 +1,4 @@
-package java_advanced;
+package java_problems.advanced;
 
 import java.io.BufferedReader;
 import java.io.IOException;

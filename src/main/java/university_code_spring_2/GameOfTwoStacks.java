@@ -6,8 +6,7 @@ import java.util.Scanner;
 /**
  * https://www.hackerrank.com/contests/university-codesprint-2/challenges/game-of-two-stacks
  * Difficulty: Medium
- * Failed Test Cases: 1, 2, 7
- * Timed Out Test Cases: 8-13
+ * Timed Out Test Cases: 2, 8-13
  */
 public class GameOfTwoStacks {
     public static void main(String[] args) {
@@ -43,9 +42,14 @@ public class GameOfTwoStacks {
         }
         if (!holder.isOptimal && ia < a.length && (ib == b.length || a[ia].compareTo(b[ib]) < 0)) {
             wtf(ia + 1, ib, a, b, currentScore.add(BigInteger.ONE), currentSum.add(a[ia]), maxSum, holder);
-        }
-        if (!holder.isOptimal && ib < b.length) {
+            if (!holder.isOptimal && ib < b.length) {
+                wtf(ia, ib + 1, a, b, currentScore.add(BigInteger.ONE), currentSum.add(b[ib]), maxSum, holder);
+            }
+        } else if (!holder.isOptimal && ib < b.length) {
             wtf(ia, ib + 1, a, b, currentScore.add(BigInteger.ONE), currentSum.add(b[ib]), maxSum, holder);
+            if (!holder.isOptimal && ia < a.length) {
+                wtf(ia + 1, ib, a, b, currentScore.add(BigInteger.ONE), currentSum.add(a[ia]), maxSum, holder);
+            }
         }
     }
 
